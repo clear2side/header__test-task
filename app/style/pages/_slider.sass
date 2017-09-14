@@ -1,0 +1,55 @@
+.slider__main-page
+  margin-top: 32px
+  display: block
+  height: 325px
+  .container
+    height: 100%
+  .one-time--container
+    position: relative
+    .one-time--text
+      position: absolute
+      color: #fff
+      top: 0
+      bottom: 0
+      left: 70px
+      margin: auto
+      height: rem(130px)
+      padding: 20px 35px
+      font-size: rem(42px)
+      background: rgba($c-orange, .5)
+      @include desktop
+        font-size: 38px
+      @include tablet
+        font-size: 28px
+      @include phone
+        font-size: 15px
+        padding: 10px 15px
+        height: 60px
+    .one-time--img
+      object-fit: cover
+
+  .slick-dots
+    bottom: -50px
+    li
+      border-radius: 20px
+      background: rgba($c-orange, .5)
+    .slick-active
+      background: $c-orange
+  .slick-arrow
+    display: block
+    height: 130px
+    width: 35px
+    background: $c-orange
+    z-index: 66
+    @include tablet
+      height: 40px
+  .slick-next
+    right: 0
+    &:before
+      content: '>'
+      font-weight: bold
+  .slick-prev
+    left: 0
+    &:before
+      font-weight: bold
+      content: '<'

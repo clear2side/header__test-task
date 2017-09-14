@@ -1,0 +1,51 @@
+header.header
+  .header__hidden-menu
+    ul.header__hidden-menu--list
+    -var hiddenMenuIcon = ['menu','home','magnifier-tool','shopping-cart','user','telephone']
+      each hiddenMenuIcons in hiddenMenuIcon
+        li.header__hidden-menu--item
+          a(href="#")
+            +icon(hiddenMenuIcons)
+
+  .container
+    .header__top
+      .header__top--logo
+        .logo__icon blagoy<i>art</i>
+        .logo__title Интернет-магазин «Благой арт»
+      .header__top--search
+        input(type="text" placeholder="Введите название или артикул").search__field
+        button(type="submit").search__submit
+          +icon("magnifier-tool")
+      .header__top--tel
+        .tel__number +7 (800) 707-81-39
+        .work__time
+          span ПН-ПТ с 9:00 до 18:00
+          span Доставка по РФ и СНГ
+
+    .header__bottom
+      .header__bottom--nav
+        ul.header__bottom--nav_list
+          li.nav__list-item
+            a(href="#").nav__list-item--link
+              span.nav__list-item--icon
+                +icon("list")
+              span.nav__list-item--title каталог товаров
+              span.nav__list-item--arr
+                svg.nav__list-item--arr-svg
+                  polyline.nav__left--polyline(points="0 0,6 6, 12 0" style='fill:none;  stroke-width:2')
+          -var listNav = ["условия работы","скидки","оплата и доставка","документы","контакты"]
+          each itemNav in listNav
+            li.nav__list-item
+              a(href="#").nav__list-item--link= itemNav
+      .header__bottom--basket
+        .header__bottom--item
+          a(href="#").header__bottom--item__link
+            +icon('shopping-cart')
+        .header__bottom--item.header__bottom--basket__count
+          a(href="#").header__bottom--basket__count--icon 10
+          span.header__bottom--basket__count--prod Товаров /
+          span.header__bottom--basket__count--price 56 789 Р
+        .header__bottom--item.header__bottom--login
+          a.header__bottom--login--link
+            +icon('user')
+            span.header__bottom--login__title войти

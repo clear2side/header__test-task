@@ -1,0 +1,17 @@
+extends ./modules/_head
+block variables
+  - var title = 'Home page'
+block content
+  .content
+    .container
+      .header__top--logo
+        .logo__icon blagoy<i>art</i>
+        .logo__title Интернет-магазин «Благой арт»
+
+      .slider__main-page
+        .one-time
+          -for(i=0; i<3; i++)
+            .one-time--container
+              .one-time--text.
+                Новая коллекция <br>SWAROVSKI уже здесь!
+              img.one-time--img(src="img/photo.png", alt="")

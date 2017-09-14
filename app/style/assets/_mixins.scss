@@ -1,0 +1,66 @@
+/* variables */
+
+$c-text: #181616;
+$c-orange: #cb944c;
+$c-grey: #808080;
+$c-lightgrey: #b9b8bd;
+$c-blue: #252a54;
+
+/* clearfix */
+
+%clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+} //  @extend %clearfix;
+
+/* rem to px */
+
+$baseFontSize: 16;
+@function rem($pixels, $context: $baseFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+@mixin desktop {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 760px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+
+/*html 
+    font-size: 16px
+    @include desktop 
+      font-size: 16px
+    @include laptop 
+      font-size: 15px
+    @include tablet
+      font-size: 14px
+    @include phone
+      font-size: 13px */

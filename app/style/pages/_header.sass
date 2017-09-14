@@ -1,0 +1,226 @@
+.header
+  @extend %clearfix;
+
+.header__top,
+.header__bottom
+  display: flex
+  justify-content: space-between
+  align-items: center
+  @include tablet
+    display: none
+
+.header__hidden-menu
+  display: none
+  @include tablet
+    display: block
+
+.header__top
+  height: 100px
+  @include tablet
+    padding: 0 25px
+
+.header__bottom
+  border-top: 1px solid $c-lightgrey
+  border-bottom: 1px solid $c-lightgrey
+  @include desktop
+    flex-direction: column-reverse
+    border: none
+    align-items: flex-end
+
+  @include tablet
+    justify-content: center
+
+/* ------- header top ------- */
+.header__top--logo
+  width: 290px
+  .logo__icon
+    text-transform: uppercase
+    font-size: rem(35px)
+    color: #3dade3
+    i
+      color: #2b3056
+      position: relative
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        height: 2px
+        background: #2b3056
+        top: 10px
+        left: -2px
+        width: 12px
+  .logo__title
+    color: $c-grey
+    font-size: rem(14px)
+
+.header__top--search
+  width: rem(500px)
+  position: relative
+  margin-left: rem(20px)
+  .search__field
+    display: inline-block
+    vertical-align: middle
+    width: 100%
+    font-size: rem(14px)
+    padding: 15px 10px
+    border-radius: 4px
+    border: 1px solid $c-lightgrey
+    &:placeholder
+      color: $c-lightgrey
+  .search__submit
+    display: inline-block
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    margin: auto
+    height: 20px
+    width: 20px
+    transform: translateX(-50%)
+    svg
+      fill: $c-orange
+
+.header__top--tel
+  text-align: right
+  .tel__number
+    font-size: rem(23px)
+    @include laptop
+      font-size: 1rem
+  .work__time
+    margin-left: 18px
+  .tel__number,
+  .work__time
+    display: inline-block
+    vertical-align: middle
+    span
+      display: block
+      font-size: rem(14px)
+      &:first-child
+        color: $c-orange
+      &:last-child
+        color: $c-blue
+
+/* ------- header bottom ------- */
+.header__bottom--nav
+  display: flex
+  align-items: center
+  justify-content: space-between
+  height: 56px
+  width: 840px
+  @include desktop
+    width: 100%
+    border-top: 1px solid $c-lightgrey
+    border-bottom: 1px solid $c-lightgrey
+
+.header__bottom--nav_list
+  display: flex
+  justify-content: space-between
+  width: 100%
+  .nav__list-item
+    display: inline-block
+    font-size: rem(16px)
+    font-weight: bold
+    text-transform: uppercase
+    .nav__list-item--link
+      color: $c-text
+    @include laptop
+      font-size: 0.9rem
+    &:last-child
+      margin-right: 0
+    .nav__list-item--icon
+      display: inline-block
+      vertical-align: middle
+      height: 14px
+      width: 16px
+      svg
+        fill: $c-orange 
+    .nav__list-item--title
+      display: inline-block
+      vertical-align: middle
+      margin: 0 10px
+    .nav__list-item--arr
+      display: inline-block
+      height: 8px
+      width: 18px
+      .nav__list-item--arr-svg
+        height: 100%
+        width: 100%
+        polyline
+          stroke: $c-orange
+
+.header__bottom--basket
+  width: 320px
+  @include desktop
+    padding-bottom: 10px
+  .header__bottom--item
+    display: inline-block
+    vertical-align: middle
+    margin-left: 13px
+  .header__bottom--login
+    .icon-user,
+    .header__bottom--login__enter
+      display: inline-block
+      vertical-align: middle
+      margin-left: 8px
+  .header__bottom--basket__count
+    span
+      font-size: 14px
+      font-weight: bold
+      color: $c-blue
+      text-transform: uppercase
+    .header__bottom--basket__count--icon
+      display: inline-block
+      position: relative
+      margin-right: 8px
+      background: $c-orange
+      padding: 3px
+      border-radius: 20px
+      vertical-align: middle
+      color: white
+      font-weight: bold
+    .header__bottom--basket__count--prod
+      margin-right: 4px
+  .header__bottom--login
+    font-size: 14px
+    font-weight: bold
+    color: $c-blue
+    text-transform: uppercase
+    .header__bottom--login__title
+      margin-left: 4px
+  .icon
+    height: 25px
+    width: 25px
+  svg
+    fill: $c-orange
+
+
+/* ------- hidden menu ------- */
+
+.header__hidden-menu--list
+  height: 100%
+  @extend %clearfix;
+
+.header__hidden-menu--item
+  position: relative
+  width: calc(100% / 6)
+  float: left
+  height: 80px
+  background: #f0f1f6
+  @include phone
+    height: 40px
+
+  .icon
+    height: 18px
+    width: 22px
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+  svg
+    fill: #dbdbdc
+  &.active
+    background: #3eade2
+    svg
+      fill: #fff
