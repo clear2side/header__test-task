@@ -118,6 +118,7 @@
   width: 100%
   .nav__list-item
     display: inline-block
+    position: relative
     font-size: rem(16px)
     font-weight: bold
     text-transform: uppercase
@@ -224,3 +225,61 @@
     background: #3eade2
     svg
       fill: #fff
+
+/* hidden hover menu */
+.nav__list-item--hover-menu--hidden
+  position: absolute
+  width: 0px
+  padding: 0
+  top: 21px
+  left: 10px
+  background: #fff
+  z-index: 99
+  box-shadow: 1px 2px 3px grey
+  border-radius: 3px
+  width: 265px
+  .nav__list-item--hover-menu--hidden__item
+    list-style: square inside
+    list-style-image: url(../img/circle.png);
+    padding: 5px 15px
+    &:hover
+      background: #e9e9ea
+  .nav__list-item--hover-menu--hidden__item--link
+    display: inline-block
+    padding: 7px 0px 12px 7px
+  .nav__list-item--hover-menu--hidden__item--title
+    display: inline-block
+    vertical-align: middle
+    color: #666666
+    font-weight: normal
+    font-size: 15px
+    text-transform: none
+  .nav__list-item--arr
+    transform: rotate(-90deg)
+    display: inline-block
+    vertical-align: middle
+    margin-left: 20px
+
+.menu__item--display__first_level
+  display: none
+.menu__item--hover__first_level
+  &:hover
+    .menu__item--display__first_level
+      display: block
+
+.menu__item--display__second_level
+  position: abolute
+  display: none
+  top: 0
+  left: 100%
+.menu__item--hover__second_level
+  position: relative
+  &:hover
+    .menu__item--display__second_level
+      display: block
+  .menu__item--display__second_level--title
+    text-transform: uppercase
+    color: $c-orange
+    font-size: 16px
+    list-style: none
+    padding: 20px

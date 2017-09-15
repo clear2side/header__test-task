@@ -25,7 +25,7 @@ header.header
     .header__bottom
       .header__bottom--nav
         ul.header__bottom--nav_list
-          li.nav__list-item
+          li.nav__list-item.nav__list-item--hover-menu.menu__item--hover__first_level
             a(href="#").nav__list-item--link
               span.nav__list-item--icon
                 +icon("list")
@@ -33,6 +33,49 @@ header.header
               span.nav__list-item--arr
                 svg.nav__list-item--arr-svg
                   polyline.nav__left--polyline(points="0 0,6 6, 12 0" style='fill:none;  stroke-width:2')
+            ul.nav__list-item--hover-menu--hidden.menu__item--display__first_level
+              li.nav__list-item--hover-menu--hidden__item.menu__item--hover__second_level
+                a(href="#").nav__list-item--hover-menu--hidden__item--link
+                  span.nav__list-item--hover-menu--hidden__item--title Свадебная бижутерия
+                  span.nav__list-item--arr
+                    svg.nav__list-item--arr-svg
+                      polyline.nav__left--polyline(points="0 0,6 6, 12 0" style='fill:none;  stroke-width:2')
+                ul.nav__list-item--hover-menu--hidden.menu__item--display__second_level
+                  li.menu__item--display__second_level--title Свадебная бижутерия
+                  -var biguteria = ['Браслеты','Кулоны','Зажимы и запонки']
+                  each biguterias in biguteria
+                    li.nav__list-item--hover-menu--hidden__item
+                      a(href="#").nav__list-item--hover-menu--hidden__item--link
+                        span.nav__list-item--hover-menu--hidden__item--title= biguterias
+              li.nav__list-item--hover-menu--hidden__item
+                a(href="#").nav__list-item--hover-menu--hidden__item--link
+                  span.nav__list-item--hover-menu--hidden__item--title Аксессуары для волос
+              li.nav__list-item--hover-menu--hidden__item
+                a(href="#").nav__list-item--hover-menu--hidden__item--link
+                  span.nav__list-item--hover-menu--hidden__item--title Броши
+              li.nav__list-item--hover-menu--hidden__item.menu__item--hover__second_level
+                a(href="#").nav__list-item--hover-menu--hidden__item--link
+                  span.nav__list-item--hover-menu--hidden__item--title Мужские аксессуары
+                  span.nav__list-item--arr
+                    svg.nav__list-item--arr-svg
+                      polyline.nav__left--polyline(points="0 0,6 6, 12 0" style='fill:none;  stroke-width:2')
+                ul.nav__list-item--hover-menu--hidden.menu__item--display__second_level
+                  li.menu__item--display__second_level--title мужская бижутерия
+                  -var accessory = ['Браслеты','Кулоны','Зажимы и запонки']
+                  each accessories in accessory
+                    li.nav__list-item--hover-menu--hidden__item
+                      a(href="#").nav__list-item--hover-menu--hidden__item--link
+                        span.nav__list-item--hover-menu--hidden__item--title= accessories
+              li.nav__list-item--hover-menu--hidden__item
+                a(href="#").nav__list-item--hover-menu--hidden__item--link
+                  span.nav__list-item--hover-menu--hidden__item--title Клатчи
+              li.nav__list-item--hover-menu--hidden__item
+                a(href="#").nav__list-item--hover-menu--hidden__item--link
+                  span.nav__list-item--hover-menu--hidden__item--title Детская бижутерия
+              li.nav__list-item--hover-menu--hidden__item
+                a(href="#").nav__list-item--hover-menu--hidden__item--link
+                  span.nav__list-item--hover-menu--hidden__item--title Демонстрационное <br>оборудование
+        
           -var listNav = ["условия работы","скидки","оплата и доставка","документы","контакты"]
           each itemNav in listNav
             li.nav__list-item
