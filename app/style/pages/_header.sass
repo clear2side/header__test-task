@@ -74,8 +74,7 @@
 .header__top--search
   width: rem(500px)
   position: relative
-  @include desktop
-    height: 35px
+  height: 35px
   @include laptop
     width: 220px
     height: 28px
@@ -101,11 +100,10 @@
     margin: auto
     height: 20px
     width: 20px
+    transform: translateX(-50%)
     @include laptop
       height: 12px
       width: 12px
-    
-    transform: translateX(-50%)
     svg
       fill: $c-orange
 
