@@ -5,7 +5,6 @@
 .header__bottom
   display: flex
   justify-content: space-between
-  align-items: center
   @include tablet
     display: none
 
@@ -16,10 +15,15 @@
 
 .header__top
   height: 100px
+  padding-top: 22px
+  @include laptop
+    height: 63px
+
   @include tablet
     padding: 0 25px
 
 .header__bottom
+  align-items: center
   border-top: 1px solid $c-lightgrey
   border-bottom: 1px solid $c-lightgrey
   @include desktop
@@ -32,23 +36,37 @@
 
 /* ------- header top ------- */
 .header__top--logo
-  width: 290px
+  width: 311px
+  @include laptop
+    width: 200px
+
   .logo__icon
     text-transform: uppercase
-    font-size: rem(35px)
+    font-size: 42px
     color: #3dade3
+    line-height: .9
+    letter-spacing: 4px
+    @include desktop
+      font-size: 30px
+      letter-spacing: 3px
+    @include phone
+      letter-spacing: 5px
     i
+      display: inline-block
+      line-height: .71
       color: #2b3056
       position: relative
       &:after
         content: ''
         display: block
         position: absolute
-        height: 2px
+        height: 3px
         background: #2b3056
-        top: 10px
-        left: -2px
-        width: 12px
+        top: 0px
+        left: 0px
+        width: 13px
+        @include desktop
+          width: 9px
   .logo__title
     color: $c-grey
     font-size: rem(14px)
@@ -56,15 +74,22 @@
 .header__top--search
   width: rem(500px)
   position: relative
-  margin-left: rem(20px)
+  @include desktop
+    height: 35px
+  @include laptop
+    width: 220px
+    height: 28px
+  
   .search__field
     display: inline-block
     vertical-align: middle
     width: 100%
     font-size: rem(14px)
-    padding: 15px 10px
+    padding: 10px
     border-radius: 4px
     border: 1px solid $c-lightgrey
+    @include laptop
+      font-size: 10px
     &:placeholder
       color: $c-lightgrey
   .search__submit
@@ -76,6 +101,10 @@
     margin: auto
     height: 20px
     width: 20px
+    @include laptop
+      height: 12px
+      width: 12px
+    
     transform: translateX(-50%)
     svg
       fill: $c-orange
@@ -85,13 +114,16 @@
   .tel__number
     font-size: rem(23px)
     @include laptop
-      font-size: 1rem
+      font-size: 16px
   .work__time
-    margin-left: 18px
+    margin-left: 8px
+    span
+      @include laptop
+        font-size: 10px !important
   .tel__number,
   .work__time
     display: inline-block
-    vertical-align: middle
+    vertical-align: top
     span
       display: block
       font-size: rem(14px)
@@ -105,8 +137,8 @@
   display: flex
   align-items: center
   justify-content: space-between
-  height: 56px
-  width: 840px
+  height: 50px
+  width: 811px
   @include desktop
     width: 100%
     border-top: 1px solid $c-lightgrey
@@ -150,13 +182,17 @@
           stroke: $c-orange
 
 .header__bottom--basket
-  width: 320px
+  display: flex
+  width: 309px
+  justify-content: space-between
+  align-items: center
   @include desktop
     padding-bottom: 10px
+  @include laptop
+    width: 245px
   .header__bottom--item
     display: inline-block
     vertical-align: middle
-    margin-left: 13px
   .header__bottom--login
     .icon-user,
     .header__bottom--login__enter
@@ -165,14 +201,17 @@
       margin-left: 8px
   .header__bottom--basket__count
     span
-      font-size: 14px
+      font-size: 16px
       font-weight: bold
       color: $c-blue
       text-transform: uppercase
+      @include laptop
+        font-size: 12px
     .header__bottom--basket__count--icon
       display: inline-block
       position: relative
       margin-right: 8px
+      font-size: 14px
       background: $c-orange
       padding: 3px
       border-radius: 20px
@@ -181,16 +220,24 @@
       font-weight: bold
     .header__bottom--basket__count--prod
       margin-right: 4px
+      font-size: 16px
+      @include laptop
+        font-size: 12px
   .header__bottom--login
-    font-size: 14px
+    font-size: 16px
     font-weight: bold
     color: $c-blue
     text-transform: uppercase
+    @include laptop
+      font-size: 12px
     .header__bottom--login__title
       margin-left: 4px
   .icon
     height: 25px
     width: 25px
+    @include laptop
+      height: 18px
+      width: 18px
   svg
     fill: $c-orange
 
@@ -231,22 +278,24 @@
   position: absolute
   width: 0px
   padding: 0
-  top: 21px
-  left: 10px
+  top: 17px
+  left: 0px
   background: #fff
   z-index: 99
   box-shadow: 1px 2px 3px grey
   border-radius: 3px
   width: 265px
+  @include laptop
+    width: 245px
   .nav__list-item--hover-menu--hidden__item
     list-style: square inside
     list-style-image: url(../img/circle.png);
-    padding: 5px 15px
+    padding-left: 17px
     &:hover
       background: #e9e9ea
   .nav__list-item--hover-menu--hidden__item--link
     display: inline-block
-    padding: 7px 0px 12px 7px
+    padding: 7px 0px
   .nav__list-item--hover-menu--hidden__item--title
     display: inline-block
     vertical-align: middle
@@ -258,10 +307,13 @@
     transform: rotate(-90deg)
     display: inline-block
     vertical-align: middle
-    margin-left: 20px
+    position: absolute
+    right: 15px
 
 .menu__item--display__first_level
   display: none
+  padding-top: 34px
+  padding-bottom: 20px  
 .menu__item--hover__first_level
   &:hover
     .menu__item--display__first_level
@@ -270,8 +322,9 @@
 .menu__item--display__second_level
   position: abolute
   display: none
-  top: 0
+  top: -15px
   left: 100%
+  padding: 15px 0
 .menu__item--hover__second_level
   position: relative
   &:hover
@@ -282,4 +335,4 @@
     color: $c-orange
     font-size: 16px
     list-style: none
-    padding: 20px
+    padding: 8px 18px
