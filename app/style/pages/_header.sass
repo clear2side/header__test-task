@@ -5,6 +5,7 @@
 .header__bottom
   display: flex
   justify-content: space-between
+  align-items: none
   @include tablet
     display: none
 
@@ -15,15 +16,15 @@
 
 .header__top
   height: 100px
-  padding-top: 22px
+  padding-top: 32px
   @include laptop
+    padding-top: 22px
     height: 63px
 
   @include tablet
     padding: 0 25px
 
 .header__bottom
-  align-items: center
   border-top: 1px solid $c-lightgrey
   border-bottom: 1px solid $c-lightgrey
   @include desktop
@@ -36,7 +37,7 @@
 
 /* ------- header top ------- */
 .header__top--logo
-  width: 311px
+  width: 300px
   @include laptop
     width: 200px
 
@@ -75,9 +76,14 @@
   width: rem(500px)
   position: relative
   height: 35px
+  margin-left: -90px
+
+  @include desktop
+    margin-left: 0
   @include laptop
     width: 220px
     height: 28px
+    
   
   .search__field
     display: inline-block
